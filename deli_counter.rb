@@ -9,26 +9,36 @@ def line(katz_deli)
   else
     number = 1
     katz_deli.each do |customer|
-    line_position << "#{number}. #{customer}"
-    number += 1
-  end
-    puts "The line is currently: #{line_position.join(" ")}"
-  end
+     line_position << "#{number}. #{customer}"
+     number += 1 
+    end  
+   puts "The line is currently: #{line_position.join(" ")}"  
+  end    
 end
 
 def take_a_number(katz_deli, name)
   katz_deli << name
   puts "Welcome, #{name}. You are number #{katz_deli.size} in line."
-end 
+end
 
 def now_serving(katz_deli)
   if katz_deli.empty?
     puts "There is nobody waiting to be served!"
-  else  
-  puts "Currently serving #{katz_deli.first}."
-  katz_deli.shift
-  end
-end  
+  else 
+    puts "Currently serving #{katz_deli.first}."
+    katz_deli.shift
+  end 
+end
 
+$customer_count = 1
 
+def ticket_wheel
+  $customer_count += 1
+puts "welcome your number is #{$customer_count}."
+end
 
+ticket_wheel
+
+ticket_wheel 
+
+ticket_wheel 
